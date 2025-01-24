@@ -13,8 +13,8 @@
 name: Update Checker
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-  REPO_BRANCH: v23.05.4
+  REPO_URL: https://github.com/CHUNGPT17/test.git
+  REPO_BRANCH: 23.05.5
 on:
   workflow_dispatch:
 #  schedule:

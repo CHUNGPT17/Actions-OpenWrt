@@ -13,8 +13,8 @@
 name: Update Checker
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede.git
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/CHUNGPT17/test.git
+  REPO_BRANCH: 24.10.0
 on:
   workflow_dispatch:
 #  schedule:

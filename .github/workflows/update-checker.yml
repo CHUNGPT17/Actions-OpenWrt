@@ -13,8 +13,8 @@
 name: Update Checker
 
 env:
-  REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
-  REPO_BRANCH: kernel-6.12
+  REPO_URL: https://github.com/coolsnowwolf/lede.git
+  REPO_BRANCH: master
 on:
   workflow_dispatch:
 #  schedule:

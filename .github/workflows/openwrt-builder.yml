@@ -69,11 +69,18 @@ jobs:
 
     - name: delete & add golang    
       run: |
+        rm -r /workdir/openwrt/include/kernel-defaults.mk
+        rm -r /workdir/openwrt/package/base-files/files/bin/config_generate
         rm -r /workdir/openwrt/feeds/packages/net/curl/patches/200-no_docs_tests.patch
+        rm -r /workdir/openwrt/package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
         rm -r /workdir/openwrt/feeds/packages/net/curl/Makefile
+        wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/kernel-defaults.mk > /workdir/openwrt/include/kernel-defaults.mk
+        wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/mac80211.uc > /workdir/openwrt/package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
         wget -qO- https://raw.githubusercontent.com/openwrt/packages/openwrt-23.05/net/curl/patches/200-no_docs_tests.patch > /workdir/openwrt/feeds/packages/net/curl/patches/200-no_docs_tests.patch
-        wget -qO- https://raw.githubusercontent.com/openwrt/packages/openwrt-23.05/net/curl/Makefile > /workdir/openwrt/feeds/packages/net/curl/Makefile    
-
+        wget -qO- https://raw.githubusercontent.com/openwrt/packages/openwrt-23.05/net/curl/Makefile > /workdir/openwrt/feeds/packages/net/curl/Makefile
+        wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/vermagic > /workdir/openwrt/vermagic
+        wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/config_generate > /workdir/openwrt/package/base-files/files/bin/config_generate
+   
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 

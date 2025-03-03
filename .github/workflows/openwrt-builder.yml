@@ -72,6 +72,7 @@ jobs:
         rm -r /workdir/openwrt/include/kernel-defaults.mk
         rm -r /workdir/openwrt/package/base-files/files/bin/config_generate
         rm -r /workdir/openwrt/feeds/packages/net/curl/patches/200-no_docs_tests.patch
+        rm -r /workdir/openwrt/feeds/packages/net/mwan3/files/usr/sbin/mwan3track
         rm -r /workdir/openwrt/package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
         rm -r /workdir/openwrt/feeds/packages/net/curl/Makefile
         wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/kernel-defaults.mk > /workdir/openwrt/include/kernel-defaults.mk
@@ -80,7 +81,8 @@ jobs:
         wget -qO- https://raw.githubusercontent.com/openwrt/packages/openwrt-23.05/net/curl/Makefile > /workdir/openwrt/feeds/packages/net/curl/Makefile
         wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/vermagic > /workdir/openwrt/vermagic
         wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/config_generate > /workdir/openwrt/package/base-files/files/bin/config_generate
-   
+        wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/mwan3track > /workdir/openwrt/feeds/packages/net/mwan3/files/usr/sbin/mwan3track
+
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 

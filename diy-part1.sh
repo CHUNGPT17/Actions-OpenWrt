@@ -14,5 +14,7 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+echo 'src-git modemfeed https://github.com/CHUNGSEV/modemfeed.git' >>feeds.conf.default
+echo 'src-git detector https://github.com/CHUNGSEV/luci-app-internet-detector.git' >>feeds.conf.default
+echo 'src-git passwall2 https://github.com/CHUNGSEV/X.git;passwall2' >>feeds.conf.default
+echo 'src-git x https://github.com/CHUNGSEV/luci.git;com.x-wrt' >>feeds.conf.default

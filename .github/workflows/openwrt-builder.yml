@@ -70,6 +70,7 @@ jobs:
     - name: delete & add golang    
       run: |
         rm -r /workdir/openwrt/include/kernel-defaults.mk
+        rm -r /workdir/openwrt/target/linux/mediatek/image/filogic.mk
         rm -r /workdir/openwrt/package/base-files/files/bin/config_generate
         rm -r /workdir/openwrt/package/libs/ustream-ssl/Makefile
         rm -r /workdir/openwrt/package/utils/px5g-mbedtls/px5g-mbedtls.c
@@ -96,6 +97,7 @@ jobs:
         wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/libs/mbedtls/Makefile > /workdir/openwrt/package/libs/mbedtls/Makefile
         wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/utils/px5g-mbedtls/Makefile > /workdir/openwrt/package/utils/px5g-mbedtls/Makefile
         wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/utils/px5g-mbedtls/px5g-mbedtls.c > /workdir/openwrt/package/utils/px5g-mbedtls/px5g-mbedtls.c
+        wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/filogic.mk > /workdir/openwrt/target/linux/mediatek/image/filogic.mk
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a

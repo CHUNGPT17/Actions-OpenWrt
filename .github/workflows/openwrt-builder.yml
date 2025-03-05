@@ -81,8 +81,6 @@ jobs:
         rm -r /workdir/openwrt/feeds/packages/net/curl/Makefile
         wget -qO- https://raw.githubusercontent.com/openwrt/packages/openwrt-23.05/net/curl/patches/200-no_docs_tests.patch > /workdir/openwrt/feeds/packages/net/curl/patches/200-no_docs_tests.patch
         wget -qO- https://raw.githubusercontent.com/openwrt/packages/openwrt-23.05/net/curl/Makefile > /workdir/openwrt/feeds/packages/net/curl/Makefile
-        wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/vermagic > /workdir/openwrt/vermagic
-        wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/config_generate > /workdir/openwrt/package/base-files/files/bin/config_generate
         wget -qO- https://raw.githubusercontent.com/CHUNGPT17/time/refs/heads/main/mwan3track > /workdir/openwrt/feeds/packages/net/mwan3/files/usr/sbin/mwan3track
         wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/libs/ustream-ssl/Makefile > /workdir/openwrt/package/libs/ustream-ssl/Makefile
         wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/libs/uclient/Makefile > /workdir/openwrt/package/libs/uclient/Makefile

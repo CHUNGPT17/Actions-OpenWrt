@@ -14,7 +14,7 @@ name: Update Checker
 
 env:
   REPO_URL: https://github.com/CHUNGPT17/test.git
-  REPO_BRANCH: 24.10.0
+  REPO_BRANCH: 23.05.5
 on:
   workflow_dispatch:
 #  schedule:

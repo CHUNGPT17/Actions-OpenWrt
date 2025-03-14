@@ -67,6 +67,27 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
+    - name: delete & add golang    
+      run: |
+        rm -r /workdir/openwrt/package/libs/ustream-ssl/Makefile
+        rm -r /workdir/openwrt/package/utils/px5g-mbedtls/px5g-mbedtls.c
+        rm -r /workdir/openwrt/package/utils/px5g-mbedtls/Makefile
+        rm -r /workdir/openwrt/package/libs/uclient/Makefile
+        rm -r /workdir/openwrt/package/libs/mbedtls/patches/100-fix-gcc14-build.patch
+        rm -r /workdir/openwrt/package/libs/mbedtls/patches/101-remove-test.patch
+        rm -r /workdir/openwrt/package/libs/mbedtls/Makefile
+        rm -r /workdir/openwrt/feeds/packages/net/curl/patches/200-no_docs_tests.patch
+        rm -r /workdir/openwrt/feeds/packages/net/curl/Makefile
+        wget -qO- https://raw.githubusercontent.com/openwrt/packages/openwrt-23.05/net/curl/patches/200-no_docs_tests.patch > /workdir/openwrt/feeds/packages/net/curl/patches/200-no_docs_tests.patch
+        wget -qO- https://raw.githubusercontent.com/openwrt/packages/openwrt-23.05/net/curl/Makefile > /workdir/openwrt/feeds/packages/net/curl/Makefile
+        wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/libs/ustream-ssl/Makefile > /workdir/openwrt/package/libs/ustream-ssl/Makefile
+        wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/libs/uclient/Makefile > /workdir/openwrt/package/libs/uclient/Makefile
+        wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/libs/mbedtls/patches/100-x509-crt-verify-SAN-iPAddress.patch > /workdir/openwrt/package/libs/mbedtls/patches/100-x509-crt-verify-SAN-iPAddress.patch
+        wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/libs/mbedtls/patches/101-remove-test.patch > /workdir/openwrt/package/libs/mbedtls/patches/101-remove-test.patch
+        wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/libs/mbedtls/Makefile > /workdir/openwrt/package/libs/mbedtls/Makefile
+        wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/utils/px5g-mbedtls/Makefile > /workdir/openwrt/package/utils/px5g-mbedtls/Makefile
+        wget -qO- https://raw.githubusercontent.com/openwrt/openwrt/refs/tags/v23.05.5/package/utils/px5g-mbedtls/px5g-mbedtls.c > /workdir/openwrt/package/utils/px5g-mbedtls/px5g-mbedtls.c
+
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
